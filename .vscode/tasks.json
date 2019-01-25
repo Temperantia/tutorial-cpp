@@ -1,0 +1,82 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "variables",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++2a",
+                "-g",
+                "-obuild/variables",
+                "1_variables.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "operators",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++2a",
+                "-g",
+                "-obuild/operators",
+                "2_operators.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "functions",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++2a",
+                "-g",
+                "-obuild/functions",
+                "3_functions.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "structures",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++2a",
+                "-g",
+                "-obuild/structures",
+                "4_structures.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "classes",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++2a",
+                "-g",
+                "-obuild/classes",
+                "5_classes.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
