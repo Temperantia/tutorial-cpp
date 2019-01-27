@@ -26,64 +26,50 @@
 using std::cout;
 using std::endl;
 
-typedef int newtype;
-enum color { red, green, blue };
 
-// définition d'une constante C like
-#define NEWLINE '\n'
+typedef int NewType;
+typedef enum Color { red, green, blue } Color;
 
-// variable globale
-int g = 20;
-
-// automatiquement initialisée à 0
-int h;
-
-// variable globale partagée entre plusieurs fichiers
-extern int n;
-
-// cette variable n'est déclarée qu'une seule fois pour toute utilisation
-static int l = 10;
+int g = 20;         // variable globale
+int h;              // automatiquement initialisée à 0
+extern int n;       // variable globale partagée entre plusieurs fichiers
+static int l = 10;  // cette variable n'est déclarée qu'une seule fois pour
+                    // toute utilisation
 
 int main(void) {
-    // std::cout << "hello" << std::endl; Sans using namespace
-    cout << "hello" << endl;
+  // std::cout << "hello" << std::endl; Sans using
+  cout << "hello" << endl;
 
-    cout << "Size of char : " << sizeof(char) << " octet" << endl;
-    cout << "Size of int : " << sizeof(int) << " octets" << endl;
-    cout << "Size of short int : " << sizeof(short int) << " octets" << endl;
-    cout << "Size of long int : " << sizeof(long int) << " octets" << endl;
-    cout << "Size of float : " << sizeof(float) << " octets" << endl;
-    cout << "Size of double : " << sizeof(double) << " octets" << endl;
-    cout << "Size of wchar_t : " << sizeof(wchar_t) << " octets" << endl;
+  cout << "Size of char : " << sizeof(char) << " octet" << endl;
+  cout << "Size of int : " << sizeof(int) << " octets" << endl;
+  cout << "Size of short int : " << sizeof(short int) << " octets" << endl;
+  cout << "Size of long int : " << sizeof(long int) << " octets" << endl;
+  cout << "Size of float : " << sizeof(float) << " octets" << endl;
+  cout << "Size of double : " << sizeof(double) << " octets" << endl;
+  cout << "Size of wchar_t : " << sizeof(wchar_t) << " octets" << endl;
 
-    int i = 0;
-    newtype j = 0;
+  int i = 0;
+  NewType j = 0;
 
-    color c = green;
-    cout << "c value is : " << c << endl;
+  Color c = green;
+  cout << "c value is : " << c << endl;
 
-    cout << "global value equals " << g << endl;
+  cout << "global value equals " << g << endl;
 
-    // variable locale non initialisée par défaut -> dangereux
-    int k;
+  // variable locale non initialisée par défaut -> dangereux
+  int k;  // variable locale non initialisée par défaut -> utilisation
+          // dangereuse
+  // cout << k << endl;     // valeur aléatoire
+  k = 3;                   // OK pour utilisation
+  const int CONSTANT = 3;  // cette valeur ne peut en aucun cas être altérée
+  // CONSTANT = 4;          // ne compilera pas
+  unsigned int l = 50000;  // non signé, pas de nombre négatif possible
+  static int m = 5;  // cette variable n'est définie qu'une seule fois pour tout
+                     // appel de fonction
 
-    cout << NEWLINE;
+  float d = 3.3;
+  int casted = static_cast<int>(d);  // 3
 
-    const int CONSTANT = 3;  // cette valeur ne peut en aucun cas être altérée
-
-    unsigned int l = 50000;  // se référer aux types de base du C
-
-    // cette variable n'est définie qu'une seule fois
-    // pour tout appel de fonction
-    static int m = 5;
-
-    double d = 3.3;
-    int cPlusPlusCasted = static_cast<int>(d);  // 3 // C++
-    int cPlusCasted = int(d);  // 3 // C+
-    int cCasted = (int)d;  // 3 // C et C+
-
-    cout << cPlusPlusCasted << endl;
-    cout << cPlusCasted << endl;
-    cout << cCasted << endl;
-    return 0;
+  cout << casted << endl;
+  return 0;
 }

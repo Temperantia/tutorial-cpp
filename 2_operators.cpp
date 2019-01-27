@@ -94,7 +94,7 @@ int main(void) {
         --i;
     */
 
-    for (int start = 0; start < 10; ++start) {
+    for (int start = 0 ; start < 10 ; ++start) {
         ++i;
     }
 
@@ -102,11 +102,6 @@ int main(void) {
     const array<string, 2> a {"lol", "ok"};
     for (auto x : a) {  // C++ 11
         cout << x << endl;
-    }
-    // C
-    const char *a2[2] = {"lol", "ok"};
-    for (int i = 0; i < 2; ++i) {
-        printf("%s\n", a2[i]);
     }
 
     do {

@@ -28,7 +28,7 @@ int main(void) {
     cout << twice(3) << endl;
 
     // srand(time(NULL));  // C
-    unsigned int seed = static_cast<unsigned int>(time(nullptr));  // C++
+    unsigned int seed = static_cast<unsigned int>(time(nullptr));  // C++ 11
 
     int i = rand_r(&seed);
     int j = rand_r(&seed) % 10;

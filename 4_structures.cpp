@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib>
 
 using std::cout;
 using std::endl;
@@ -60,7 +61,13 @@ int main() {
 
     cout << "Adresse " << p << " contient " << *p << endl;
 
+     v
+    [3][4]
     int &j = i;
+
+    int *array = malloc(sizeof(int) * 4);
+    int *array = new (sizeof(int) * 4);
+    free(array);
 
     struct Book book1;
     Book book2;
